@@ -1,0 +1,69 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Sign In Verification</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="content">
+  <div class="ion-padding">
+    <div class="title">
+      <h2>Verify Mobile Number</h2>
+      <p>Enter the 4-Digit code sent to you at +919095924511</p>
+    </div>
+    <div class="otp-field">
+      <ion-row>
+        <ion-col>
+          <ion-input
+            class="x"
+            #otp1
+            required="true"
+            maxLength="1"
+            [(ngModel)]="OTP.first"
+            (keyup)="otpController($event,otp2,otp1,'')"
+          >
+          </ion-input>
+          <ion-input
+            class="x"
+            #otp2
+            required="true"
+            maxLength="1"
+            [(ngModel)]="OTP.second"
+            (keyup)="otpController($event,otp3,otp1,otp1)"
+          >
+          </ion-input>
+          <ion-input
+            class="x"
+            #otp3
+            required="true"
+            maxLength="1"
+            [(ngModel)]="OTP.third"
+            (keyup)="otpController($event,otp4,otp2,otp2)"
+          >
+          </ion-input>
+
+          <ion-input
+            class="x"
+            #otp4
+            required="true"
+            maxLength="1"
+            [(ngModel)]="OTP.fourth"
+            (keyup)="otpController($event,'',otp3,otp3)"
+          >
+          </ion-input>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <div class="submit-btn">
+      <ion-button expand="block" fill="solid">Continue</ion-button>
+    </div>
+    <div class="resend-otp">
+      <p>
+        Don't receove code? <ion-button fill="clear">Resent Again</ion-button>
+      </p>
+    </div>
+    <div class="footer-text">
+      By Signing up you agree to our Terms Conditions & Privacy Policy.
+    </div>
+  </div>
+</ion-content>
