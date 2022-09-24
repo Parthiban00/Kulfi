@@ -43,6 +43,10 @@ const routes: Routes = [
     path: 'coupons',
     loadChildren: () => import('./pages/coupons/coupons.module').then( m => m.CouponsPageModule)
   },
+  {
+    path: 'otp-verification',
+    loadChildren: () => import('./pages/otp-verification/otp-verification.module').then( m => m.OtpVerificationPageModule)
+  },
 ];
 
 @NgModule({
