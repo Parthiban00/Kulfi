@@ -1,0 +1,42 @@
+ion-header{
+  ion-toolbar{
+    text-align: center;
+    ion-title{
+      font-family:'latoBold';
+      font-weight:600;
+      font-size: 16px;
+    }
+    }
+  }
+
+
+ion-content.content{
+  font-family:"latoRegular";
+  --ion-background-color:#ffffff;
+  h1,h2{
+    font-family: 'latoLight';
+    font-weight: 500;
+    font-size: 32px;
+    font-style: normal;
+  }
+  P{
+    color:gray
+  }
+  .credential-box{
+    margin-top: 50px;
+    ion-item{
+      margin-top: 20px;
+    }
+  }
+  .sign-in-btn{
+    margin-top:50px;
+    ion-button{
+      color: #ffffff;
+      height: 50px;
+      font-weight: 500;
+      --box-shadow: none;
+
+    }
+  }
+}
+
