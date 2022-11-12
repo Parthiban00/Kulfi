@@ -1,0 +1,153 @@
+ion-header {
+  ion-toolbar {
+   ion-button{
+    height:50px;
+    width:50px;
+    --border-radius:50%;
+
+   }
+    ion-title {
+      font-family: "latoBold";
+      font-weight: 600;
+      font-size: 16px;
+     display:inline-block;
+  }
+  }
+
+  .addr-title{
+    font-family: "latoBold";
+    height: 20px;
+    font-size: 14px;
+  }
+  .addr-title-content{
+    font-family: "latoRegular";
+    margin-left: 50px;
+    margin-top: -35px;
+    font-size: 12px;
+  }
+}
+
+ion-content.content {
+   font-family: "latoRegular";
+  --ion-background-color: #ffffff;
+
+  .slider-container{
+   // background-color: bisque;
+    height: 120px;
+    padding: 0px;
+    /* Without setting height the slides will take up the height of the slide's content */
+ion-slides {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  ion-slide{
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    background-image: url('../../../assets/test-banner.jpg');
+    background-size: cover;
+  }
+}
+  }
+
+  .categories-container{
+    padding: 0px;
+    .container-label{
+      margin-top: 10px;
+    ion-label{
+
+      font-family: "latoBold";
+      font-weight: 600;
+      font-size: 14px;
+    }
+  }
+    ion-card{
+      padding: 0px;
+      box-shadow: none;
+      background-color:  #ffd148; //secondary
+      height: 300px;
+      overflow: scroll;
+      scroll-behavior: smooth;
+ion-card-content{
+  ion-col > div {
+    background-color:#ffffff;
+    // border: solid 1px #ddd;
+    // padding: 10px;
+    height: 100px;
+    border-radius: 5px;
+    .category-img{
+      // style="background-color: green;height:80px;border-radius: 5px;"
+      background-color: green;
+      height: 80px;
+      border-radius:5px;
+    }
+    .category-label{
+      // style="bottom:0;height:30px;font-size: 12px;font-weight:600;text-align: center;"
+      bottom:0;
+      height:30px;
+      font-size:12px;
+      font-weight: 600;
+      text-align: center;
+    }
+  }
+}
+    }
+  }
+
+
+  .today-trending-container{
+    padding: 0px;
+    height: 120px;
+    .today-trending-label{
+      margin-top: 10px;
+    ion-label{
+
+      font-family: "latoBold";
+      font-weight: 600;
+      font-size: 14px;
+    }
+  }
+
+  ion-slides {
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 10px;
+          ion-slide{
+            height: 100%;
+            width: 100px;
+            border-radius: 5px;
+            background-image: url('../../../assets/test-banner.jpg');
+            background-size: cover;
+
+          }
+
+    }
+  }
+  .ribbon-wrapper {
+    width: 85px;
+    height: 88px;
+    overflow: hidden;
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    .ribbon {
+      font: bold 10px sans-serif;
+      color: #333;
+      text-align: center;
+      -webkit-transform: rotate(314deg);
+      -moz-transform:    rotate(-45deg);
+      -ms-transform:     rotate(-45deg);
+      -o-transform:      rotate(-45deg);
+      position: relative;
+      padding: 5px 0;
+      top: 7px;
+      left: -32px;
+      width: 102px;
+      height: 22px;
+      background-color: #ebb134;
+      color: #fff;
+    }
+  }
+
+  }

@@ -15,10 +15,10 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
-  {
-    path: 'location-setup',
-    loadChildren: () => import('./pages/location-setup/location-setup.module').then( m => m.LocationSetupPageModule)
-  },
+  // {
+  //   path: 'location-setup',
+  //   loadChildren: () => import('./pages/location-setup/location-setup.module').then( m => m.LocationSetupPageModule)
+  // },
   {
     path: 'home-main',
     loadChildren: () => import('./pages/home-main/home-main.module').then( m => m.HomeMainPageModule)
@@ -46,6 +46,10 @@ const routes: Routes = [
   {
     path: 'otp-verification',
     loadChildren: () => import('./pages/otp-verification/otp-verification.module').then( m => m.OtpVerificationPageModule)
+  },
+  {
+    path: 'shared/location-setup',
+    loadChildren: () => import('./shared/location-setup/location-setup.module').then( m => m.LocationSetupPageModule)
   },
 ];
 

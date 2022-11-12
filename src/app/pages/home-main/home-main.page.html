@@ -1,9 +1,108 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>home-main</ion-title>
+    <ion-row>
+    <ion-button  fill="clear">
+      <ion-icon name="menu"></ion-icon>
+    </ion-button>
+
+    <ion-row class="addr-title">
+      <ion-col>
+        Work
+      </ion-col>
+    </ion-row>
+    <ion-row class="addr-title-content">
+      <ion-col>
+        1428, Thamarakki Main Road, Idayamelur
+      </ion-col>
+    </ion-row>
+  </ion-row>
+
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content  padding class="content">
+  <div class="ion-padding">
+
+    <div class="slider-container">
+      <ion-slides pager="true" [options]="slideOpts">
+        <ion-slide>
+          <h1>Slide 1</h1>
+        </ion-slide>
+        <ion-slide>
+          <h1>Slide 2</h1>
+        </ion-slide>
+        <ion-slide>
+          <h1>Slide 3</h1>
+        </ion-slide>
+      </ion-slides>
+    </div>
+    <div class="categories-container">
+      <div class="container-label">
+      <ion-label>Categories</ion-label>
+    </div>
+      <ion-card>
+        <ion-card-content style="padding:0px">
+          <ion-grid>
+            <ion-row>
+              <ion-col size="4" style="padding:2px;">
+                <div (click)="goToHome('Foods')"><div class="category-img"></div><div class="category-label">Foods</div>   <div class="ribbon-wrapper">
+                  <div class="ribbon">New</div></div></div>
+              </ion-col >
+              <ion-col size="4" style="padding:2px">
+                <div><div class="category-img"></div><div class="category-label">Beverages</div><div class="ribbon-wrapper">
+                  <div  class="ribbon">New</div></div></div>
+              </ion-col>
+              <ion-col size="4" style="padding:2px">
+                <div><div class="category-img"></div><div class="category-label">Fruits</div></div>
+              </ion-col>
+              <ion-col size="4" style="padding:2px">
+                <div><div class="category-img"></div><div class="category-label">Desserts</div></div>
+              </ion-col>
+              <ion-col size="4" style="padding:2px">
+                <div><div class="category-img"></div><div class="category-label">Groceries</div></div>
+              </ion-col>
+              <ion-col size="4" style="padding:2px">
+                <div><div class="category-img"></div><div class="category-label">Meats</div></div>
+              </ion-col>
+              <ion-col size="4" style="padding:2px">
+                <div><div class="category-img"></div><div class="category-label">Sea Foods</div></div>
+              </ion-col>
+              <ion-col size="4" style="padding:2px">
+                <div><div class="category-img"></div><div class="category-label">Vegetables</div></div>
+              </ion-col>
+              <ion-col size="4" style="padding:2px">
+                <div><div class="category-img"></div><div class="category-label">Foods</div></div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
+
+
+
+
+
+        </ion-card-content>
+
+      </ion-card>
+    </div>
+
+    <!-- <div class="today-trending-container">
+      <div class="today-trending-label">
+      <ion-label>Today's Trending Items</ion-label>
+    </div>
+    <ion-slides  [options]="slideOpts_">
+      <ion-slide>
+        <h1>Slide 1</h1>
+      </ion-slide>
+      <ion-slide>
+        <h1>Slide 2</h1>
+      </ion-slide>
+      <ion-slide>
+        <h1>Slide 3</h1>
+      </ion-slide>
+    </ion-slides>
+    </div> -->
+
+  </div>
 
 </ion-content>
