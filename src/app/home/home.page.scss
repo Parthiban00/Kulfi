@@ -1,30 +1,41 @@
-#container {
-  text-align: center;
+ion-header {
+  ion-toolbar {
+   ion-button{
+    height:50px;
+    width:50px;
+    --border-radius:50%;
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+   }
+    ion-title {
+      font-family: "latoBold";
+      font-weight: 600;
+      font-size: 16px;
+     display:inline-block;
+  }
+  }
+
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+ion-content{
+  font-family:"latoRegular";
+  --ion-background-color:#ffffff;
+.search-bar{
+  ion-searchbar.custom {
+    --background:#ffc51a;
+    --color: #fff;
+    --placeholder-color: #fff;
+
+    --icon-color: #fff;
+    --clear-button-color: #fff;
+    --box-shadow: none;
+    --border-radius: 5px;
+  }
+
+  ion-searchbar.md.custom {
+  --cancel-button-color: #fff;
+  }
+
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
 
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
-}
-ion-toolbar{
-  background-color: #fabf0f;
 }
