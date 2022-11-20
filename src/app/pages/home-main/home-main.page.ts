@@ -12,11 +12,11 @@ export class HomeMainPage implements OnInit {
     speed: 400,
     autoplay:true
   };
-  slideOpts_ = {
-    initialSlide: 1,
-    speed: 400,
+  // slideOpts_ = {
+  //   initialSlide: 1,
+  //   speed: 400,
 
-  };
+  // };
   constructor(public router:Router) { }
 
   ngOnInit() {
