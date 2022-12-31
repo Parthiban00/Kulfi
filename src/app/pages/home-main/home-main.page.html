@@ -1,29 +1,30 @@
 <ion-header>
   <ion-toolbar>
-    <ion-row>
-    <ion-button  fill="clear">
-      <ion-icon name="menu"></ion-icon>
-    </ion-button>
-
-    <ion-row class="addr-title">
-      <ion-col>
-        Work
-      </ion-col>
-    </ion-row>
-    <ion-row class="addr-title-content">
-      <ion-col>
-        1428, Thamarakki Main Road, Idayamelur
-      </ion-col>
-    </ion-row>
-  </ion-row>
-
+    <ion-grid>
+      <ion-row>
+        <ion-col size="2">
+          <ion-col>
+            <ion-button fill="clear">
+              <ion-icon name="menu"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-col>
+        <ion-col>
+          <ion-row size="6" class="addr-title">
+            <ion-col> Work</ion-col>
+          </ion-row>
+          <ion-row size="6" class="addr-title-content">
+            <ion-col> 1428, Thamarakki Main Road, Idayamelur</ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-toolbar>
 </ion-header>
 
-<ion-content  padding class="content">
+<ion-content padding class="content">
   <div class="ion-padding">
-
-    <div class="slider-container">
+    <!-- <div class="slider-container">
       <ion-slides pager="true" [options]="slideOpts">
         <ion-slide>
           <h1>Slide 1</h1>
@@ -35,54 +36,72 @@
           <h1>Slide 3</h1>
         </ion-slide>
       </ion-slides>
-    </div>
+    </div> -->
     <div class="categories-container">
       <div class="container-label">
-      <ion-label>Categories</ion-label>
-    </div>
+        <ion-label>Categories</ion-label>
+      </div>
       <ion-card>
-        <ion-card-content style="padding:0px">
+        <ion-card-content style="padding: 0px">
           <ion-grid>
             <ion-row>
-              <ion-col size="4" style="padding:2px;">
-                <div (click)="goToHome('Foods')"><div class="category-img"></div><div class="category-label">Foods</div>   <div class="ribbon-wrapper">
-                  <div class="ribbon">New</div></div></div>
-              </ion-col >
-              <ion-col size="4" style="padding:2px">
-                <div><div class="category-img"></div><div class="category-label">Beverages</div><div class="ribbon-wrapper">
-                  <div  class="ribbon">New</div></div></div>
+              <ion-col size="4" style="padding: 2px">
+                <div (click)="goToHome('Foods')">
+                  <div class="category-img"></div>
+                  <div class="category-label">Foods</div>
+                </div>
               </ion-col>
-              <ion-col size="4" style="padding:2px">
-                <div><div class="category-img"></div><div class="category-label">Fruits</div></div>
+              <ion-col size="4" style="padding: 2px">
+                <div>
+                  <div class="category-img"></div>
+                  <div class="category-label">Beverages</div>
+                </div>
               </ion-col>
-              <ion-col size="4" style="padding:2px">
-                <div><div class="category-img"></div><div class="category-label">Desserts</div></div>
+              <ion-col size="4" style="padding: 2px">
+                <div>
+                  <div class="category-img"></div>
+                  <div class="category-label">Fruits</div>
+                </div>
               </ion-col>
-              <ion-col size="4" style="padding:2px">
-                <div><div class="category-img"></div><div class="category-label">Groceries</div></div>
+              <ion-col size="4" style="padding: 2px">
+                <div>
+                  <div class="category-img"></div>
+                  <div class="category-label">Desserts</div>
+                </div>
               </ion-col>
-              <ion-col size="4" style="padding:2px">
-                <div><div class="category-img"></div><div class="category-label">Meats</div></div>
+              <ion-col size="4" style="padding: 2px">
+                <div>
+                  <div class="category-img"></div>
+                  <div class="category-label">Groceries</div>
+                </div>
               </ion-col>
-              <ion-col size="4" style="padding:2px">
-                <div><div class="category-img"></div><div class="category-label">Sea Foods</div></div>
+              <ion-col size="4" style="padding: 2px">
+                <div>
+                  <div class="category-img"></div>
+                  <div class="category-label">Meats</div>
+                </div>
               </ion-col>
-              <ion-col size="4" style="padding:2px">
-                <div><div class="category-img"></div><div class="category-label">Vegetables</div></div>
+              <ion-col size="4" style="padding: 2px">
+                <div>
+                  <div class="category-img"></div>
+                  <div class="category-label">Sea Foods</div>
+                </div>
               </ion-col>
-              <ion-col size="4" style="padding:2px">
-                <div><div class="category-img"></div><div class="category-label">Foods</div></div>
+              <ion-col size="4" style="padding: 2px">
+                <div>
+                  <div class="category-img"></div>
+                  <div class="category-label">Vegetables</div>
+                </div>
+              </ion-col>
+              <ion-col size="4" style="padding: 2px">
+                <div>
+                  <div class="category-img"></div>
+                  <div class="category-label">Foods</div>
+                </div>
               </ion-col>
             </ion-row>
           </ion-grid>
-
-
-
-
-
-
         </ion-card-content>
-
       </ion-card>
     </div>
 
@@ -102,7 +121,5 @@
       </ion-slide>
     </ion-slides>
     </div> -->
-
   </div>
-
 </ion-content>
