@@ -7,8 +7,9 @@ import { IonicModule } from '@ionic/angular';
 import { LocationSetupPageRoutingModule } from './location-setup-routing.module';
 
 import { LocationSetupPage } from './location-setup.page';
-
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 @NgModule({
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
     CommonModule,
     FormsModule,
@@ -17,5 +18,6 @@ import { LocationSetupPage } from './location-setup.page';
   ],
   declarations: [LocationSetupPage],
   providers:[ Geolocation  ]
+
 })
 export class LocationSetupPageModule {}

@@ -21,6 +21,10 @@ ion-header {
       height: 25px;
       width: 25px;
     }
+    .title-col{
+      align-items: center;
+      display: flex;
+    }
   }
   ion-toggle {
     height: 10px;
