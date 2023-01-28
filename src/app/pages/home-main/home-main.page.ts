@@ -22,7 +22,7 @@ export class HomeMainPage implements OnInit {
   ngOnInit() {
   }
 
-  goToHome(category:any){
+  goToHome(category:string){
     this.router.navigate(
       ['/home'],
       { queryParams: { category:category } }

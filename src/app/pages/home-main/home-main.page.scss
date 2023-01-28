@@ -1,5 +1,7 @@
 ion-header {
   ion-toolbar {
+    // height: 60px;
+    display: flex;
     ion-button {
       height: 50px;
       width: 50px;
@@ -21,6 +23,11 @@ ion-header {
   .addr-title-content {
     font-family: "latoRegular";
     font-size: 12px;
+    ion-col{
+      display: flex;
+      /* width: 100px; */
+      overflow-wrap: anywhere;
+    }
   }
 }
 

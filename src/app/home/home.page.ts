@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -28,11 +29,17 @@ export class HomePage {
     spaceBetween: 10,
     // autoplay:true,
   }
-  constructor() {
+  constructor(public router:Router) {
 
   }
-  handleChange(event) {
+  handleChange(event:any) {
     const query = event.target.value.toLowerCase();
     this.results = this.data.filter(d => d.toLowerCase().indexOf(query) > -1);
+  }
+  goToMenus(paramStoreID:string){
+    this.router.navigate(
+      ['/menus'],
+      { queryParams: { storeID:paramStoreID } }
+    );
   }
 }

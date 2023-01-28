@@ -1,5 +1,7 @@
 ion-header {
   ion-toolbar {
+    height: 60px;
+    display: flex;
     ion-button {
       height: 50px;
       width: 50px;
@@ -237,5 +239,24 @@ ion-content {
     // width: 68px;
     height: 27px;
     font-size: 12px;
+  }
+
+  .delivery-details{
+    height: 30px;
+    background: #e0e0e063;
+    border-radius: 10px;
+    ion-row{
+      height: 100%;
+      margin-top: -5px;
+      ion-col{
+        span{
+          font-size: 12px;
+    position: relative;
+    top: -3px;
+    left: 3px;
+    color: #393939;
+        }
+      }
+    }
   }
 }
