@@ -1,0 +1,454 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Foods</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button>
+        <img src="assets/offers.png" />
+        Offers
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col size="12">
+      <ion-searchbar
+        [debounce]="1000"
+        (ionInput)="handleInput($event)"
+        placeholder="Search Foods, Restaurants etc.,"
+        class="custom"
+      ></ion-searchbar>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="prl-10">
+    <ion-col size="12" class="title">Live Offers <img src="../../assets/offers.gif" class="live-offer-img"/></ion-col>
+  </ion-row>
+  <div class="todays-offer-container">
+    <ion-slides [options]="liveOffersSlideOptions" class="ion-margin-top">
+      <ion-slide>
+        <ion-card>
+          <img src="assets/live-offer-banner.png" />
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card>
+          <img src="assets/banner2.jpg" />
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card>
+          <img src="assets/banner3.png" />
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+  <ion-row class="prl-10">
+    <ion-col size="12" class="title">Popular Cuisines</ion-col>
+  </ion-row>
+  <div class="category-items-container">
+    <ion-grid>
+      <ion-row>
+        <ion-col
+          ><div class="img"> <img src="assets/parotta.jpeg"/></div>
+          <div class="title"><ion-label>Parotta</ion-label></div></ion-col
+        >
+        <ion-col
+          ><div class="img"><img src="../../../assets/fried-rice.jpg"/></div>
+          <div class="title"><ion-label>Fried Rice</ion-label></div></ion-col
+        >
+        <ion-col
+          ><div class="img"><img src="../../../assets/biriyani.jpg"/></div>
+          <div class="title"><ion-label>Biriyani</ion-label></div></ion-col
+        >
+        <ion-col
+          ><div class="img"><img src="../../../assets/meals.jpg"/></div>
+          <div class="title"><ion-label>Meals</ion-label></div></ion-col
+        >
+        <ion-col
+        ><div class="img"> <img src="assets/parotta.jpeg"/></div>
+        <div class="title"><ion-label>Parotta</ion-label></div></ion-col
+      >
+      <ion-col
+        ><div class="img"><img src="../../../assets/fried-rice.jpg"/></div>
+        <div class="title"><ion-label>Fried Rice</ion-label></div></ion-col
+      >
+      <ion-col
+        ><div class="img"><img src="../../../assets/biriyani.jpg"/></div>
+        <div class="title"><ion-label>Biriyani</ion-label></div></ion-col
+      >
+      <ion-col
+        ><div class="img"><img src="../../../assets/meals.jpg"/></div>
+        <div class="title"><ion-label>Meals</ion-label></div></ion-col
+      >
+      </ion-row>
+    </ion-grid>
+  </div>
+  <ion-row class="prl-10">
+    <ion-col size="8" class="title">Popular Restaurants</ion-col>
+    <ion-col size="4" class="right-btn"
+      ><ion-button fill="clear" color="secondary">View All</ion-button></ion-col
+    >
+  </ion-row>
+
+  <div class="shop-container" [routerLink]="['/items']">
+    <ion-row class="shop-img-row">
+      <ion-col size="12" class="shop-img-col">
+        <img src="assets/shop.jpg" />
+      </ion-col>
+    </ion-row>
+    <ion-row class="shop-name-row">
+      <ion-col size="12" class="shop-name-col"> Rolls Mamia </ion-col>
+      <ion-row class="shop-desc-row">
+        <ion-col size="12" class="shop-desc-col">
+          <span class="rating"
+            ><img class="star" src="assets/rating-star.png" />4.9</span
+          ><span class="rating-count">(124 ratings)</span
+          >
+           <span class="shop-type">- Fast Food - Western Food</span>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="shop-spec-row">
+        <ion-col size="12" class="shop-spec-col">
+          20 mins - 200 for two
+        </ion-col>
+      </ion-row>
+    </ion-row>
+  </div>
+
+  <div class="shop-container">
+    <ion-row class="shop-img-row">
+      <ion-col size="12" class="shop-img-col">
+        <img src="assets/shop.jpg" />
+      </ion-col>
+    </ion-row>
+    <ion-row class="shop-name-row">
+      <ion-col size="12" class="shop-name-col"> Rolls Mamia </ion-col>
+      <ion-row class="shop-desc-row">
+        <ion-col size="12" class="shop-desc-col">
+          <span class="rating"
+            ><img class="star" src="assets/rating-star.png" />4.9</span
+          ><span class="rating-count">(124 ratings)</span
+          ><span class="shop-type">- Fast Food - Western Food</span>
+        </ion-col>
+      </ion-row>
+      <ion-row class="shop-spec-row">
+        <ion-col size="12" class="shop-spec-col">
+          20 mins - 200 for two
+        </ion-col>
+      </ion-row>
+    </ion-row>
+  </div>
+
+  <div class="shop-container">
+    <ion-row class="shop-img-row">
+      <ion-col size="12" class="shop-img-col">
+        <img src="assets/shop.jpg" />
+      </ion-col>
+    </ion-row>
+    <ion-row class="shop-name-row">
+      <ion-col size="12" class="shop-name-col"> Rolls Mamia </ion-col>
+      <ion-row class="shop-desc-row">
+        <ion-col size="12" class="shop-desc-col">
+          <span class="rating"
+            ><img class="star" src="assets/rating-star.png" />4.9</span
+          ><span class="rating-count">(124 ratings)</span
+          ><span class="shop-type">- Fast Food - Western Food</span>
+        </ion-col>
+      </ion-row>
+      <ion-row class="shop-spec-row">
+        <ion-col size="12" class="shop-spec-col">
+          20 mins - 200 for two
+        </ion-col>
+      </ion-row>
+    </ion-row>
+  </div>
+
+  <div class="shop-container">
+    <ion-row class="shop-img-row">
+      <ion-col size="12" class="shop-img-col">
+        <img src="assets/shop.jpg" />
+      </ion-col>
+    </ion-row>
+    <ion-row class="shop-name-row">
+      <ion-col size="12" class="shop-name-col"> Rolls Mamia </ion-col>
+      <ion-row class="shop-desc-row">
+        <ion-col size="12" class="shop-desc-col">
+          <span class="rating"
+            ><img class="star" src="assets/rating-star.png" />4.9</span
+          ><span class="rating-count">(124 ratings)</span
+          ><span class="shop-type">- Fast Food - Western Food</span>
+        </ion-col>
+      </ion-row>
+      <ion-row class="shop-spec-row">
+        <ion-col size="12" class="shop-spec-col">
+          20 mins - 200 for two
+        </ion-col>
+      </ion-row>
+    </ion-row>
+  </div>
+  <ion-row class="prl-10">
+    <ion-col size="8" class="title">Most Popular</ion-col>
+    <ion-col size="4" class="right-btn"
+      ><ion-button fill="clear" color="secondary">View All</ion-button></ion-col
+    >
+  </ion-row>
+  <ion-row>
+    <ion-col size="12" class="most-popular-col">
+      <div class="cuisines-container">
+        <div class="cuisines">
+          <div class="cuisine-img">
+            <img src="assets/cuisine-img.jpg" />
+          </div>
+          <div class="cuisine-name">
+            <ion-row>
+              <ion-col size="12" class="shop-name-col"> Rolls Mamia </ion-col>
+            </ion-row>
+            <ion-row class="shop-desc-row">
+              <ion-col size="12" class="shop-desc-col">
+                <span class="rating"
+                  ><img class="star" src="assets/rating-star.png" />4.9</span
+                ><span class="rating-count">(124 ratings)</span>
+              </ion-col>
+            </ion-row>
+          </div>
+        </div>
+        <div class="cuisines">
+          <div class="cuisine-img">
+            <img src="assets/cuisine-img.jpg" />
+          </div>
+          <div class="cuisine-name">
+            <ion-row>
+              <ion-col size="12" class="shop-name-col"> Rolls Mamia </ion-col>
+            </ion-row>
+            <ion-row class="shop-desc-row">
+              <ion-col size="12" class="shop-desc-col">
+                <span class="rating"
+                  ><img class="star" src="assets/rating-star.png" />4.9</span
+                ><span class="rating-count">(124 ratings)</span>
+              </ion-col>
+            </ion-row>
+          </div>
+        </div>
+        <div class="cuisines">
+          <div class="cuisine-img">
+            <img src="assets/cuisine-img.jpg" />
+          </div>
+          <div class="cuisine-name">
+            <ion-row>
+              <ion-col size="12" class="shop-name-col"> Rolls Mamia </ion-col>
+            </ion-row>
+            <ion-row class="shop-desc-row">
+              <ion-col size="12" class="shop-desc-col">
+                <span class="rating"
+                  ><img class="star" src="assets/rating-star.png" />4.9</span
+                ><span class="rating-count">(124 ratings)</span>
+              </ion-col>
+            </ion-row>
+          </div>
+        </div>
+        <div class="cuisines">
+          <div class="cuisine-img">
+            <img src="assets/cuisine-img.jpg" />
+          </div>
+          <div class="cuisine-name">
+            <ion-row>
+              <ion-col size="12" class="shop-name-col"> Rolls Mamia </ion-col>
+            </ion-row>
+            <ion-row class="shop-desc-row">
+              <ion-col size="12" class="shop-desc-col">
+                <span class="rating"
+                  ><img class="star" src="assets/rating-star.png" />4.9</span
+                ><span class="rating-count">(124 ratings)</span>
+              </ion-col>
+            </ion-row>
+          </div>
+        </div>
+      </div>
+    </ion-col>
+  </ion-row>
+  <div class="trending-container">
+    <ion-row class="prl-10">
+      <ion-col size="8" class="title">Trending Right Now!</ion-col>
+      <ion-col size="4" class="right-btn"></ion-col>
+    </ion-row>
+
+    <div class="ion-list">
+      <div *ngFor="let product of productDetails;let i=index">
+        <ion-list lines="none">
+          <ion-card
+            class="item-list-card"
+            [ngClass]="{'not-available':!product.availableStatus}"
+          >
+            <ion-item>
+              <ion-thumbnail *ngIf="product.imageUrl" slot="end">
+                <img src="{{product.imageUrl}}" />
+
+                <ion-button
+                  class="item-img-present"
+                  *ngIf="!product.itemCount && product.availableStatus"
+                  >Add</ion-button
+                >
+                <div
+                  class="qty-selector"
+                  *ngIf="product.availableStatus && product.itemCount"
+                >
+                  <ion-button fill="clear" [disabled]="!product.itemCount"
+                    >-</ion-button
+                  >
+                  <ion-label>{{product.itemCount}}</ion-label>
+                  <ion-button fill="clear">+</ion-button>
+                </div>
+              </ion-thumbnail>
+
+              <ion-thumbnail *ngIf="!product.imageUrl" slot="end">
+                <ion-button
+                  *ngIf="!product.itemCount && product.availableStatus"
+                  class="item-img-not-present"
+                  >Add</ion-button
+                >
+                <div
+                  class="qty-selector-notimage"
+                  *ngIf="product.availableStatus && product.itemCount"
+                >
+                  <ion-button fill="clear" [disabled]="!product.itemCount"
+                    >-</ion-button
+                  >
+                  <ion-label>{{product.itemCount}}</ion-label>
+                  <ion-button fill="clear">+</ion-button>
+                </div>
+              </ion-thumbnail>
+
+              <ion-label class="item-details">
+                <ion-row class="trending-tag">
+                  <ion-col size="12">
+                    <div class="item-type">
+                      <img src="assets/non-veg.png"/>
+                    </div>
+                    <div class="tag">
+                      <p style="font-size: 10px; color: white">TRENDING</p>
+                    </div>
+                  </ion-col>
+                </ion-row>
+                <ion-row class="item-name">
+                  <ion-col size="12"> {{product.productName}} </ion-col>
+                </ion-row>
+                <ion-row class="item-description">
+                  <ion-col size="12"> {{product.description}} </ion-col>
+                </ion-row>
+                <ion-row class="item-price">
+                  <ion-col size="12"> Rs. {{product.price}} </ion-col>
+                </ion-row>
+
+                <ion-row
+                  *ngIf="!product.availableStatus"
+                  class="item-not-available"
+                >
+                  <ion-col size="12"> Currently Not Available </ion-col>
+                </ion-row>
+
+
+              </ion-label>
+            </ion-item>
+          </ion-card>
+        </ion-list>
+      </div>
+    </div>
+
+  </div>
+  <div class="trending-container">
+    <ion-row class="prl-10">
+      <ion-col size="8" class="title">Recently ordered by U!</ion-col>
+      <ion-col size="4" class="right-btn"></ion-col>
+    </ion-row>
+
+    <div class="ion-list">
+      <div *ngFor="let product of productDetails;let i=index">
+        <ion-list lines="none">
+          <ion-card
+            class="item-list-card"
+            [ngClass]="{'not-available':!product.availableStatus}"
+          >
+            <ion-item>
+              <ion-thumbnail *ngIf="product.imageUrl" slot="end">
+                <img src="{{product.imageUrl}}" />
+
+                <ion-button
+                  class="item-img-present"
+                  *ngIf="!product.itemCount && product.availableStatus"
+                  >Add</ion-button
+                >
+                <div
+                  class="qty-selector"
+                  *ngIf="product.availableStatus && product.itemCount"
+                >
+                  <ion-button fill="clear" [disabled]="!product.itemCount"
+                    >-</ion-button
+                  >
+                  <ion-label>{{product.itemCount}}</ion-label>
+                  <ion-button fill="clear">+</ion-button>
+                </div>
+              </ion-thumbnail>
+
+              <ion-thumbnail *ngIf="!product.imageUrl" slot="end">
+                <ion-button
+                  *ngIf="!product.itemCount && product.availableStatus"
+                  class="item-img-not-present"
+                  >Add</ion-button
+                >
+                <div
+                  class="qty-selector-notimage"
+                  *ngIf="product.availableStatus && product.itemCount"
+                >
+                  <ion-button fill="clear" [disabled]="!product.itemCount"
+                    >-</ion-button
+                  >
+                  <ion-label>{{product.itemCount}}</ion-label>
+                  <ion-button fill="clear">+</ion-button>
+                </div>
+              </ion-thumbnail>
+
+              <ion-label class="item-details">
+                <ion-row class="trending-tag">
+                  <ion-col size="12">
+                    <div class="item-type">
+                      <img src="assets/non-veg.png"/>
+                    </div>
+                    <div class="tag">
+                      <p style="font-size: 10px; color: white">RECENTLY ORDERED</p>
+                    </div>
+                  </ion-col>
+                </ion-row>
+                <ion-row class="item-name">
+                  <ion-col size="12"> {{product.productName}} </ion-col>
+                </ion-row>
+                <ion-row class="item-description">
+                  <ion-col size="12"> {{product.description}} </ion-col>
+                </ion-row>
+                <ion-row class="item-price">
+                  <ion-col size="12"> Rs. {{product.price}} </ion-col>
+                </ion-row>
+
+                <ion-row
+                  *ngIf="!product.availableStatus"
+                  class="item-not-available"
+                >
+                  <ion-col size="12"> Currently Not Available </ion-col>
+                </ion-row>
+
+
+              </ion-label>
+            </ion-item>
+          </ion-card>
+        </ion-list>
+      </div>
+    </div>
+
+  </div>
+</ion-content>

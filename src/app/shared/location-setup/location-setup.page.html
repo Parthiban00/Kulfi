@@ -1,25 +1,3 @@
-<ion-header  class="ion-no-border">
-  <ion-toolbar>
-    <ion-grid>
-      <ion-row>
-        <ion-col size="2">
-
-          <ion-button fill="clear">
-            <ion-icon name="arrow-back"></ion-icon>
-          </ion-button>
-
-        </ion-col>
-        <ion-col size="6" class="title-col">
-
-          <ion-title>Choose Location</ion-title>
-
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-    <!-- <ion-title>Choose Location</ion-title> -->
-  </ion-toolbar>
-</ion-header>
-
 <ion-content padding class="content">
   <!-- <div> -->
 <!-- <div class="search-bar">
@@ -28,13 +6,17 @@
 
 <div class="map" #map></div>
 
+<div class="sign-in-bottom-container">
+  <div class="sign-in-content">
+    <div class="next-btn-container"  [routerLink]="['/tabs/']">
+      <ion-icon name="arrow-forward"></ion-icon>
+    </div>
+    <div class="title-container">
+      <h3>I'm Here...</h3>
+    </div>
+    <p>{{formattedAddress}}</p>
+  </div>
 
-<div class="location">
-  <div class="address">
-  <h4>Selected Location</h4>
-  <p>{{formattedAddress}}</p>
-</div>
-  <ion-button expand="block" fill="solid" [routerLink]="['/home-main']">Proceed Further</ion-button>
 </div>
    <!-- </div>  -->
 </ion-content>

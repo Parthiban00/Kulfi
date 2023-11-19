@@ -1,26 +1,30 @@
-<ion-header class="ion-no-border">
-  <ion-toolbar>
-    <ion-title>Sign In</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content padding class="content">
-  <div class="ion-padding">
-    <h1>Welcome to Twinker</h1>
-    <h2>Food Services</h2>
-    <p>Enter your Mobile Number to Enjoy Your Favourties :)</p>
-    <div class="credential-box">
-      <ion-item>
-        <ion-label position="stacked">Name</ion-label>
-        <ion-input></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="stacked">Mobile Number</ion-label>
-        <ion-input></ion-input>
-      </ion-item>
-      <div class="sign-in-btn">
-        <ion-button expand="block" fill="solid" [routerLink]="['otp-verification']">Sign In</ion-button>
+  <div>
+    <div class="sign-in-bottom-container">
+      <div class="sign-in-content">
+        <div class="next-btn-container" [routerLink]="['otp-verification']">
+          <ion-icon name="arrow-forward"></ion-icon>
+        </div>
+        <div class="title-container">
+          <h3>Sign In</h3>
+        </div>
+
+        <div class="credential-box">
+          <div class="form-input">
+            <ion-input
+            aria-label="Mobile No."
+            placeholder="Mobile No."
+            class="custom"
+            [maxlength]="20"
+          ></ion-input>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <p>We will send OTP to this Mobile No.</p>
+        </div>
       </div>
+
     </div>
   </div>
 </ion-content>

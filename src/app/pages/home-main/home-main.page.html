@@ -1,125 +1,155 @@
-<ion-header>
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-grid>
-      <ion-row>
-        <ion-col size="2">
-          <ion-col>
-            <ion-button fill="clear">
-              <ion-icon name="menu"></ion-icon>
-            </ion-button>
-          </ion-col>
-        </ion-col>
-        <ion-col>
-          <ion-row size="6" class="addr-title">
-            <ion-col> Work</ion-col>
-          </ion-row>
-          <ion-row size="6" class="addr-title-content">
-            <ion-col> 1428, Thamarakki Main Road, Idayamelur</ion-col>
-          </ion-row>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+    <ion-title>Good Morning Sarah!</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button>
+        <img src="assets/offers.png" />
+        Offers
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding class="content">
-  <div class="ion-padding">
-    <!-- <div class="slider-container">
-      <ion-slides pager="true" [options]="slideOpts">
-        <ion-slide>
-          <h1>Slide 1</h1>
-        </ion-slide>
-        <ion-slide>
-          <h1>Slide 2</h1>
-        </ion-slide>
-        <ion-slide>
-          <h1>Slide 3</h1>
-        </ion-slide>
-      </ion-slides>
-    </div> -->
+  <div>
+    <ion-row class="delivery-location">
+      <ion-col size="12" class="delivering-to"> Delivering To </ion-col>
+    </ion-row>
+    <ion-row class="location">
+      <ion-col size="auto"> Current Location </ion-col>
+      <ion-col size="4">
+        <ion-button fill="clear" color="secondary">
+          <ion-icon name="chevron-forward"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-searchbar [debounce]="1000" (ionInput)="handleInput($event)" placeholder="Search your wishes..."
+          class="custom"></ion-searchbar>
+      </ion-col>
+    </ion-row>
+
     <div class="categories-container">
-      <div class="container-label">
-        <ion-label>Categories</ion-label>
-      </div>
-      <ion-card>
-        <ion-card-content style="padding: 0px">
-          <ion-grid>
-            <ion-row>
-              <ion-col size="4" style="padding: 2px">
-                <div (click)="goToHome('Foods')">
-                  <div class="category-img"></div>
-                  <div class="category-label">Foods</div>
-                </div>
-              </ion-col>
-              <ion-col size="4" style="padding: 2px">
-                <div>
-                  <div class="category-img"></div>
-                  <div class="category-label">Beverages</div>
-                </div>
-              </ion-col>
-              <ion-col size="4" style="padding: 2px">
-                <div>
-                  <div class="category-img"></div>
-                  <div class="category-label">Fruits</div>
-                </div>
-              </ion-col>
-              <ion-col size="4" style="padding: 2px">
-                <div>
-                  <div class="category-img"></div>
-                  <div class="category-label">Desserts</div>
-                </div>
-              </ion-col>
-              <ion-col size="4" style="padding: 2px">
-                <div>
-                  <div class="category-img"></div>
-                  <div class="category-label">Groceries</div>
-                </div>
-              </ion-col>
-              <ion-col size="4" style="padding: 2px">
-                <div>
-                  <div class="category-img"></div>
-                  <div class="category-label">Meats</div>
-                </div>
-              </ion-col>
-              <ion-col size="4" style="padding: 2px">
-                <div>
-                  <div class="category-img"></div>
-                  <div class="category-label">Sea Foods</div>
-                </div>
-              </ion-col>
-              <ion-col size="4" style="padding: 2px">
-                <div>
-                  <div class="category-img"></div>
-                  <div class="category-label">Vegetables</div>
-                </div>
-              </ion-col>
-              <ion-col size="4" style="padding: 2px">
-                <div>
-                  <div class="category-img"></div>
-                  <div class="category-label">Foods</div>
-                </div>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-        </ion-card-content>
-      </ion-card>
+
+      <ion-row>
+        <ion-col size="6" [routerLink]="['/home-land']">
+          <div class="category-content">
+
+          </div>
+        </ion-col>
+        <ion-col size="6">
+          <div class="category-content">
+
+          </div>
+        </ion-col>
+        <ion-col size="6">
+          <div class="category-content">
+
+          </div>
+        </ion-col>
+        <ion-col size="6">
+          <div class="category-content">
+
+          </div>
+        </ion-col>
+      </ion-row>
+
+
+      <!-- <div class="category-main">
+        <ion-row *ngFor="let list of categories" [routerLink]="['/home-land']">
+
+          <ion-col size="1" style="display: flex;align-items: center;">
+
+          </ion-col>
+
+          <ion-col size="11">
+            <div class="category-name-div">
+              <div class="category-img-div">
+                <img src="assets/cuisine-img.jpg" />
+              </div>
+              <ion-row>
+                <ion-col size="2"></ion-col>
+                <ion-col size="10" class="category-name">
+                  {{list.name}}
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size="2"></ion-col>
+                <ion-col size="10" class="category-items">
+                  {{list.itemCount}} Items
+                </ion-col>
+              </ion-row>
+              <div class="view-all-arrow">
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
+      </div> -->
+    </div>
+    <div class="view-all">
+      <ion-button fill="clear" color="secondary">
+        Explore all
+        <ion-icon slot="end" name="chevron-down-outline"></ion-icon>
+      </ion-button>
     </div>
 
-    <!-- <div class="today-trending-container">
-      <div class="today-trending-label">
-      <ion-label>Today's Trending Items</ion-label>
+    <div class="buddy-category-container">
+      <div class="todays-offers">
+        <div class="container-label">
+          <ion-label>MoMo Buddy Services</ion-label>
+          <!-- <img
+          src="../../assets/trending-items.gif"
+          style="margin-top: -8px !important"
+        /> -->
+        </div>
+      </div>
+      <div class="buddy-container">
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <div class="img">
+                <img src="assets/send-items.png" />
+              </div>
+              <div class="title"><ion-label>Send/Receive Items/Packages</ion-label></div>
+            </ion-col>
+            <ion-col>
+              <div class="img"><img src="assets/your-needs.png" /></div>
+              <div class="title"><ion-label>Your needs from anywhere</ion-label></div>
+            </ion-col>
+            <ion-col>
+              <div class="img"> <img src="assets/buddy.png" /></div>
+              <div class="title"><ion-label>Buddy for you (about Me)</ion-label></div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
     </div>
-    <ion-slides  [options]="slideOpts_">
-      <ion-slide>
-        <h1>Slide 1</h1>
-      </ion-slide>
-      <ion-slide>
-        <h1>Slide 2</h1>
-      </ion-slide>
-      <ion-slide>
-        <h1>Slide 3</h1>
-      </ion-slide>
-    </ion-slides>
+
+    <!-- <div class='navigation'>
+      <ul>
+        <li class="list active" style="--clr:#f44336"><a><span class="icon">
+              <ion-icon name="home-outline"></ion-icon>
+            </span></a></li>
+        <li class="list" style="--clr:#ffa117"><a ><span class="icon">
+              <ion-icon name="person-outline"></ion-icon>
+            </span></a></li>
+        <li class="list" style="--clr:#0fc70f"><a ><span class="icon">
+              <ion-icon name="chatbubble-outline"></ion-icon>
+            </span></a></li>
+        <li class="list" style="--clr:#2196f3"><a ><span class="icon">
+              <ion-icon name="camera-outline"></ion-icon>
+            </span></a></li>
+        <li class="list" style="--clr:#b145e9"><a ><span class="icon">
+              <ion-icon name="settings-outline"></ion-icon>
+            </span></a></li>
+        <div class="indicator"></div>
+      </ul>
     </div> -->
+
   </div>
 </ion-content>
+<!-- <app-tab-menu></app-tab-menu> -->

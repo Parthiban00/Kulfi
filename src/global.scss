@@ -16,7 +16,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -24,22 +24,208 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+@import "../src/theme/theme.scss";
 
 @font-face {
-  font-family:'latoRegular' ;
-  src: url('./assets/fonts/Lato-Regular.ttf');
+  font-family: "latoRegular";
+  src: url("./assets/fonts/Lato-Regular.ttf");
 }
 @font-face {
-  font-family: 'latoBold';
-  src: url('./assets/fonts/Lato-Bold.ttf');
+  font-family: "latoBold";
+  src: url("./assets/fonts/Lato-Bold.ttf");
 }
 @font-face {
-  font-family: 'latoLight';
-  src: url('./assets/fonts/Lato-Light.ttf');
+  font-family: "latoLight";
+  src: url("./assets/fonts/Lato-Light.ttf");
 }
 
 @font-face {
-  font-family: 'latoThin';
-  src: url('./assets/fonts/Lato-Thin.ttf');
+  font-family: "latoThin";
+  src: url("./assets/fonts/Lato-Thin.ttf");
 }
 
+body {
+  font-family: "latoRegular";
+}
+
+ion-content,
+ion-item,
+ion-list,
+ion-label {
+  font-family: "latoRegular";
+  color: var(--ion-color-medium-shade);
+}
+
+ion-title {
+  font-family: "latoBold";
+}
+
+ion-button {
+  font-family: "latoBold";
+  text-transform: capitalize;
+}
+
+.title {
+  font-family: "latoBold";
+  font-size: 16px;
+  margin: auto;
+  color: var(--ion-color-medium);
+}
+
+.right-btn {
+  text-align: right;
+}
+
+.prl-10 {
+  padding: 0 10px;
+}
+
+ion-col {
+  color: var(--ion-color-medium-shade);
+}
+
+.hr-line {
+  height: 1px;
+  width: 100%;
+  background: var(--ion-color-medium);
+  margin-top: 5px;
+}
+
+.ion-list {
+  ion-list {
+    padding: 0;
+  }
+
+  .item-list-card {
+    border-radius: 5px;
+    box-shadow: none;
+    margin: 0;
+
+    ion-item {
+      ion-thumbnail {
+        position: relative;
+        height: 120px;
+        width: 110px;
+        border-radius: 2px;
+        margin: 0;
+
+        img {
+          border-radius: 10px;
+          // box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+          box-shadow:
+            rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+            rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        }
+
+        .item-img-present {
+          position: absolute;
+          left: 18px;
+          bottom: 5px;
+          --background: rgb(255, 255, 255) !important;
+          --color: seagreen;
+          --box-shadow: 0;
+          width: 70px;
+          height: 30px;
+        }
+
+        .item-img-not-present {
+          position: absolute;
+          left: 18px;
+          bottom: 28px;
+          --background: seagreen !important;
+          --color: white;
+          --box-shadow: 0;
+          width: 70px;
+        }
+
+        .qty-selector {
+          display: flex;
+          position: absolute;
+          bottom: 5px;
+          left: 17px;
+          justify-content: center;
+          align-items: center;
+          background: #f6f6f6;
+          border-radius: 5px;
+          margin-top: 10px;
+          width: -moz-fit-content;
+          width: fit-content;
+          height: 30px;
+          font-size: 12px;
+          // margin-left: 35px;
+        }
+        .qty-selector-notimage {
+          display: flex;
+          position: absolute;
+          bottom: 28px;
+          left: 17px;
+          justify-content: center;
+          align-items: center;
+          background: #f6f6f6;
+          border-radius: 5px;
+          margin-top: 10px;
+          width: fit-content;
+          height: 30px;
+          font-size: 12px;
+          // margin-left: 35px;
+        }
+      }
+    }
+    .item-details {
+      height: 100%;
+      width: 100%;
+      padding: 10px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .item-name {
+        font-family: "latoBold";
+        font-size: 14px;
+      }
+
+      .item-description {
+        font-size: 14px;
+        font-family: "latoRegular";
+      }
+
+      .item-price {
+        ion-col {
+          color: var(--ion-color-primary);
+          font-size: 14px;
+          font-family: "latoBold";
+        }
+      }
+
+      .item-not-available {
+        ion-col {
+          font-size: 12px;
+          font-style: italic;
+        }
+      }
+      .trending-tag {
+        ion-col {
+          display: flex;
+          .tag {
+            height: 18px;
+            width: fit-content;
+            background-color: var(--ion-color-secondary);
+            text-align: center;
+            border-radius: 5px;
+            margin-left: 5px;
+            padding: 0 5px;
+          }
+
+          .item-type {
+            height: 18px;
+            width: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.form-input{
+  margin: 10px 0;
+}

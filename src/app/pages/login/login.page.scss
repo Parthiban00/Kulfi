@@ -12,7 +12,7 @@ ion-header{
 
 ion-content.content{
   font-family:"latoRegular";
-  --ion-background-color:#ffffff;
+  --ion-background-color:var(--ion-color-primary);
   h1,h2{
     font-family: 'latoLight';
     font-weight: 500;
@@ -37,6 +37,50 @@ ion-content.content{
       --box-shadow: none;
       --border-radius:10px;
 
+    }
+  }
+
+  .sign-in-bottom-container{
+    height: 30%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    padding-top: 20px;
+
+    .sign-in-content{
+      height: 100%;
+      width: 100%;
+      position: relative;
+      background: rgb(255, 255, 255);
+      border-radius: 20px 20px 0 0;
+      padding: 20px;
+
+      .next-btn-container{
+        position: absolute;
+        right: 30px;
+        top: -20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: var(--ion-color-secondary);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 24px;
+      }
+
+      .title-container{
+        h3{
+          font-family:'latoBold';
+          font-weight:600;
+        }
+      }
+
+      .info-box{
+        text-align: center;
+        font-size: 14px;
+      }
     }
   }
 }

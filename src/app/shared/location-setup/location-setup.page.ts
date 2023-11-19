@@ -20,8 +20,8 @@ export class LocationSetupPage implements OnInit {
   mapClickListener: any;
   markerClickListener: any;
   markers: any[] = [];
-  geocoder:any;
-  formattedAddress:string;
+  geocoder: any;
+  formattedAddress: string;
 
 
   constructor(
@@ -38,6 +38,7 @@ export class LocationSetupPage implements OnInit {
 
   }
 
+  // eslint-disable-next-line @angular-eslint/use-lifecycle-interface
   ngAfterViewInit() {
     const printCurrentPosition = async () => {
       const coordinates = Geolocation.getCurrentPosition();
@@ -48,33 +49,31 @@ export class LocationSetupPage implements OnInit {
       this.currentPositionCoords = {
         lat: data.coords.latitude,
         lng: data.coords.longitude
-      }
+      };
+
       this.loadMap();
 
-    })
+    });
 
   }
 
-
-
-
   async loadMap() {
     try {
-      let googleMaps: any = await this.gmaps.loadGoogleMaps();
+      const googleMaps: any = await this.gmaps.loadGoogleMaps();
       this.googleMaps = googleMaps;
       const mapEl = this.mapElementRef.nativeElement;
       const location = new googleMaps.LatLng(this.currentPositionCoords.lat, this.currentPositionCoords.lng);
       this.map = new googleMaps.Map(mapEl, {
         center: location,
-        zoom: 20,
+        zoom: 18,
       });
       this.renderer.addClass(mapEl, 'visible');
       this.addMarker(location);
       this.onMapClick();
 
 
-       this.geocoder = new googleMaps.Geocoder();
-       this.reverseGeocode(this.currentPositionCoords.lat, this.currentPositionCoords.lng);
+      this.geocoder = new googleMaps.Geocoder();
+      this.reverseGeocode(this.currentPositionCoords.lat, this.currentPositionCoords.lng);
 
     } catch (e) {
       console.log(e);
@@ -82,13 +81,13 @@ export class LocationSetupPage implements OnInit {
 
 
   }
-//to get address
+  //to get address
   reverseGeocode(latitude, longitude) {
     console.log('getAddress entered');
-    this.geocoder.geocode({ 'location': { lat: latitude, lng: longitude } }, (results, status) => {
+    this.geocoder.geocode({ location: { lat: latitude, lng: longitude } }, (results, status) => {
       if (status === 'OK') {
         if (results[0]) {
-         // this.zoom = 12;
+          // this.zoom = 12;
           // this.address = results[0].formatted_address;
           // this.formattedAddress=this.address;
           // console.log("getAddress "+this.address);
@@ -98,8 +97,8 @@ export class LocationSetupPage implements OnInit {
           //   address:this.address,
           //   locality:this.selectedValue
           // }
-          console.log('fomatted addres (reverse geocode) ',results[0].formatted_address);
-          this.formattedAddress=results[0].formatted_address;
+          console.log('fomatted addres (reverse geocode) ', results[0].formatted_address);
+          this.formattedAddress = results[0].formatted_address;
         } else {
           window.alert('No results found');
         }
@@ -111,14 +110,14 @@ export class LocationSetupPage implements OnInit {
   }
 
   onMapClick() {
-    this.mapClickListener = this.googleMaps.event.addListener(this.map, "click", (mapsMouseEvent) => {
+    this.mapClickListener = this.googleMaps.event.addListener(this.map, 'click', (mapsMouseEvent) => {
       console.log(mapsMouseEvent.latLng.toJSON());
       //  this.addMarker(mapsMouseEvent.latLng);
     });
   }
 
   addMarker(location) {
-    let googleMaps: any = this.googleMaps;
+    const googleMaps: any = this.googleMaps;
     const icon = {
       url: 'assets/location_pin.png',
       scaledSize: new googleMaps.Size(50, 50),
@@ -126,29 +125,29 @@ export class LocationSetupPage implements OnInit {
     const marker = new googleMaps.Marker({
       position: location,
       map: this.map,
-      icon: icon,
+      icon,
       draggable: false,
       animation: googleMaps.Animation.DROP,
     });
     this.markers.push(marker);
 
-    this.map.addListener('drag', (e)=> {
-     // console.log(`Current Map Center: ${this.map.getCenter()}`);
-      console.log('current map center - lat ',this.map.getCenter().lat(),' lng ',this.map.getCenter().lng())
-    //  this.reverseGeocode(this.map.getCenter().lat(), this.map.getCenter().lng());
-     marker.setPosition(this.map.getCenter());
-  });
+    this.map.addListener('drag', (e) => {
+      // console.log(`Current Map Center: ${this.map.getCenter()}`);
+      console.log('current map center - lat ', this.map.getCenter().lat(), ' lng ', this.map.getCenter().lng());
+      //  this.reverseGeocode(this.map.getCenter().lat(), this.map.getCenter().lng());
+      marker.setPosition(this.map.getCenter());
+    });
 
-  this.map.addListener('idle', (e)=> {
-    // console.log(`Current Map Center: ${this.map.getCenter()}`);
-   //  console.log('current map center - lat ',this.map.getCenter().lat(),' lng ',this.map.getCenter().lng())
-     this.reverseGeocode(this.map.getCenter().lat(), this.map.getCenter().lng());
-   // marker.setPosition(this.map.getCenter());
- });
+    this.map.addListener('idle', (e) => {
+      // console.log(`Current Map Center: ${this.map.getCenter()}`);
+      //  console.log('current map center - lat ',this.map.getCenter().lat(),' lng ',this.map.getCenter().lng())
+      this.reverseGeocode(this.map.getCenter().lat(), this.map.getCenter().lng());
+      // marker.setPosition(this.map.getCenter());
+    });
   }
 
   checkAndRemoveMarker(marker) {
-    const index = this.markers.findIndex(x => x.position.lat() == marker.position.lat() && x.position.lng() == marker.position.lng());
+    const index = this.markers.findIndex(x => x.position.lat() === marker.position.lat() && x.position.lng() === marker.position.lng());
     console.log('is marker already: ', index);
     if (index >= 0) {
       this.markers[index].setMap(null);
@@ -188,10 +187,11 @@ export class LocationSetupPage implements OnInit {
     await actionSheet.present();
   }
 
+  // eslint-disable-next-line @angular-eslint/use-lifecycle-interface
   ngOnDestroy() {
     // this.googleMaps.event.removeAllListeners();
-    if (this.mapClickListener) this.googleMaps.event.removeListener(this.mapClickListener);
-    if (this.markerClickListener) this.googleMaps.event.removeListener(this.markerClickListener);
+    if (this.mapClickListener) {this.googleMaps.event.removeListener(this.mapClickListener);}
+    if (this.markerClickListener) {this.googleMaps.event.removeListener(this.markerClickListener);}
   }
 
 

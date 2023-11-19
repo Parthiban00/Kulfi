@@ -51,6 +51,20 @@ const routes: Routes = [
     path: 'shared/location-setup',
     loadChildren: () => import('./shared/location-setup/location-setup.module').then( m => m.LocationSetupPageModule)
   },
+  {
+    path: 'home-land',
+    loadChildren: () => import('./pages/home-land/home-land.module').then( m => m.HomeLandPageModule)
+  },
+  {
+    path: 'items',
+    loadChildren: () => import('./pages/items/items.module').then( m => m.ItemsPageModule)
+  },
+  {
+    path: 'tabs',
+    loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
+  }
+
+
 ];
 
 @NgModule({

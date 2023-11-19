@@ -1,0 +1,195 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="cart" color="light"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div class="shop-details-bg">
+    <img src="../../../assets/shop.jpg">
+
+    <ion-row class="shop-details overlay overlay_1">
+      <ion-col size="12" class="shop-name">
+        Joelington's Pizza
+      </ion-col>
+      <ion-col size="12" class="shop-desc">
+        Joelington's Pizza
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <div class="item-list-details">
+
+    <div class="like-div">
+
+      <!-- <div class="triangle">
+
+    </div> -->
+
+      <div class="like-btn-div">
+        <img src="../../../assets/curved-triangle.png">
+      </div>
+
+      <ion-button fill="clear">
+        <ion-icon slot="icon-only" name="heart" color="danger"></ion-icon>
+      </ion-button>
+
+    </div>
+
+    <div class="item-lists">
+
+      <div class="info-section">
+        <ion-row>
+          <ion-col size="12" class="rating-star">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star-o"></span>
+            <span class="fa fa-star-o"></span>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="8" class="rating-count">
+            4 Star Ratings <span>(128 Reviews)</span>
+          </ion-col>
+          <ion-col size="4" >
+            <ion-row>
+              <ion-col size="4" class="veg-img-col">
+                <div class="veg-img"><img src="assets/veg-toggle.png" /></div>
+              </ion-col>
+              <ion-col size="8" class="veg-toggle-col">
+                <ion-toggle [checked]="false"></ion-toggle>
+              </ion-col>
+            </ion-row>
+
+
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12" class="description-title title">
+            Description
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12" class="description">
+            A paragraph is a short collection of well-organized sentences which revolve around a single theme and is
+            coherent.
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12" class="delivery-time">
+            <ion-icon name="time-outline"></ion-icon><span>&nbsp;&nbsp;30 min - 200 for two</span>
+          </ion-col>
+        </ion-row>
+        <div class="hr-line"></div>
+      </div>
+
+      <div class="main-list" *ngFor="let productLists of productDetails;let i=index">
+        <ion-row class="recommended-title-row">
+          <ion-col size="6" class="title">
+            {{productLists.mainCategory}}
+          </ion-col>
+          <ion-col size="6">
+
+          </ion-col>
+        </ion-row>
+        <div class="ion-list" *ngFor="let product of productLists.items">
+          <div>
+            <ion-list lines="none">
+              <ion-card class="item-list-card" [ngClass]="{'not-available':!product.availableStatus}">
+                <ion-item>
+                  <ion-thumbnail *ngIf="product.imageUrl" slot="end">
+                    <img src="{{product.imageUrl}}" />
+
+                    <ion-button class="item-img-present"
+                      *ngIf="!product.itemCount && product.availableStatus">Add</ion-button>
+                    <div class="qty-selector" *ngIf="product.availableStatus && product.itemCount">
+                      <ion-button fill="clear" [disabled]="!product.itemCount">-</ion-button>
+                      <ion-label>{{product.itemCount}}</ion-label>
+                      <ion-button fill="clear">+</ion-button>
+                    </div>
+                  </ion-thumbnail>
+
+                  <ion-thumbnail *ngIf="!product.imageUrl" slot="end">
+                    <ion-button *ngIf="!product.itemCount && product.availableStatus"
+                      class="item-img-not-present">Add</ion-button>
+                    <div class="qty-selector-notimage" *ngIf="product.availableStatus && product.itemCount">
+                      <ion-button fill="clear" [disabled]="!product.itemCount">-</ion-button>
+                      <ion-label>{{product.itemCount}}</ion-label>
+                      <ion-button fill="clear">+</ion-button>
+                    </div>
+                  </ion-thumbnail>
+
+                  <ion-label class="item-details">
+                    <ion-row class="trending-tag">
+                      <ion-col size="12">
+                        <div class="item-type">
+                          <img *ngIf="product.type==='non-veg'" src="assets/non-veg.png" />
+                          <img *ngIf="product.type==='veg'" src="assets/veg.png" />
+                          <img *ngIf="product.type==='egg'" src="assets/egg.png" />
+                        </div>
+                        <div class="tag" *ngIf="product.tag">
+                          <p style="font-size: 10px; color: white">{{product.tag | uppercase}}</p>
+                        </div>
+                      </ion-col>
+                    </ion-row>
+                    <ion-row class="item-name">
+                      <ion-col size="12"> {{product.productName}} </ion-col>
+                    </ion-row>
+                    <ion-row class="item-description">
+                      <ion-col size="12"> {{product.description}} </ion-col>
+                    </ion-row>
+                    <ion-row class="item-price">
+                      <ion-col size="12"> Rs. {{product.price}} </ion-col>
+                    </ion-row>
+
+                    <ion-row *ngIf="!product.availableStatus" class="item-not-available">
+                      <ion-col size="12"> Currently Not Available </ion-col>
+                    </ion-row>
+
+
+                  </ion-label>
+                </ion-item>
+              </ion-card>
+            </ion-list>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</ion-content>
+
+<div style="margin-bottom:20px; align-items: center;
+justify-content: center;display: flex;">
+
+  <ion-button class="menu-float-btn" id="top-center"><img src="assets/menu.png" />&nbsp;Menus</ion-button>
+  <ion-popover trigger="top-center" side="top" alignment="center">
+    <ng-template>
+      <ion-content>
+        <ion-list>
+          <ion-item class="menu-item" [button]="true" [detail]="false">
+            <ion-row class="menu-item-row" style="width: 100%;">
+              <ion-col size="3"> <img src="../../../assets/active-menu1.gif" style="height:28px;" /></ion-col>
+              <ion-col size="7"> Meals </ion-col>
+              <ion-col size="2">12</ion-col>
+            </ion-row>
+          </ion-item>
+          <ion-item class="menu-item" [button]="true" [detail]="false">
+            <ion-row class="menu-item-row" style="width: 100%;">
+              <ion-col size="3"></ion-col>
+              <ion-col size="7"> Beverages</ion-col>
+              <ion-col size="2">12</ion-col>
+            </ion-row>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ng-template>
+  </ion-popover>
+
+</div>
